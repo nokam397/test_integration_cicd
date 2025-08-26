@@ -1,6 +1,6 @@
 pipeline{
     triggers {
-        upstream('build_deploy', '')
+        upstream 'build_deploy, '
         pollSCM('H/2 * * * *')
     }
     agent{
