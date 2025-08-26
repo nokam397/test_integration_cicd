@@ -1,6 +1,6 @@
 pipeline{
     triggers {
-        upstream 'build-and-deploy-integration, '
+        upstream 'build_deploy, '
     }
     agent{
         docker{
