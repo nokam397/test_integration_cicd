@@ -1,6 +1,7 @@
 pipeline{
     triggers {
-        upstream 'build_deploy, '
+        upstream('build_deploy', '')
+        pollSCM('H/2 * * * *')
     }
     agent{
         docker{
@@ -18,6 +19,12 @@ pipeline{
                 sh 'mvn test'
             }
         }
+
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }
     }
    
 }
