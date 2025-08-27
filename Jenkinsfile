@@ -25,16 +25,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo " Archivage des résultats de tests..."
-            junit 'target/surefire-reports/*.xml'
-        }
-        success {
-            echo " Build et tests passés avec succès"
-        }
-        failure {
-            echo "Échec du build ou des tests"
-        }
-    }
+    
 }
