@@ -9,7 +9,7 @@ pipeline {
 
     triggers {
         upstream('build_deploy')    
-        pollSCM('H/2 * * * *')      
+         pollSCM '* * * * *'      
     }
 
     stages {
